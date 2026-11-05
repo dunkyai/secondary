@@ -20,13 +20,14 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
 .c-num,.num{text-align:right;font-variant-numeric:tabular-nums}
 .c-date{color:var(--mute)}.c-go{color:var(--mute);transition:transform .15s}
 .na{color:var(--mute);font-style:italic;font-size:14px}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:48px;align-items:start;padding-bottom:64px}
-.facts dl{margin:0;border-top:1px solid var(--ink)}
-.facts div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.facts dt{color:var(--mute);font-size:14px}.facts dd{margin:0;font-weight:500;text-align:right}
+.stack{padding-bottom:64px}.stack>section+section{margin-top:40px}
+.facts dl{margin:0;border-top:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts dt{color:var(--mute);font-size:13px;margin-bottom:4px}.facts dd{margin:0;font-weight:500;font-size:17px}
+.facts .wide{grid-column:span 2}
 .bid{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px}
 .bid h2{font:400 32px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 8px}.bid>p{margin:0 0 16px;color:var(--mute)}
-.bid iframe{width:100%;height:880px;border:0;display:block}
+.bid iframe{width:100%;height:1000px;border:0;display:block}
 .bid .alt{font-size:13px;margin:12px 0 0}.bid a{color:var(--acc)}
 .foot{border-top:1px solid var(--line);padding-top:24px;padding-bottom:48px;color:var(--mute);font-size:13px}
 @media (max-width:760px){h1{font-size:40px}.top{padding-top:48px}
@@ -34,29 +35,20 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
 .c-name{grid-column:1/-1}.c-date{grid-column:1/-1;font-size:14px}
 .row .c-num{text-align:left}.row .c-num::before{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
 .row .c-num:nth-of-type(3)::before{content:"Invested"}.row .c-num:nth-of-type(4)::before{content:"Value today"}
-.c-go{display:none}.grid{grid-template-columns:1fr;gap:32px}.bid{padding:16px}}
+.c-go{display:none}.facts dl{grid-template-columns:1fr}.facts .wide{grid-column:auto}.bid{padding:16px 8px}.bid h2,.bid>p{padding:0 8px}.sec h2{font-size:28px}}
+
+.terms{margin:24px 0 0;max-width:720px;padding:14px 18px;border-left:3px solid var(--acc);background:#eef2ee;font-size:15px;font-weight:500}
+.sec{margin-bottom:56px}.sec h2{font:400 34px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 6px}.sec>p{margin:0 0 16px;color:var(--mute);font-size:15px}
+.sec .ledger{margin-bottom:0}
+div.row .c-go{visibility:hidden}
+.closed{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;color:var(--mute)}
 </style></head><body>
-<header class="wrap top"><p class="eyebrow">Secondary sale &middot; 21 positions</p>
+<header class="wrap top"><p class="eyebrow">Secondary sale &middot; 20 positions open for bids</p>
 <h1>SPV positions open for bids</h1>
-<p class="lede">Each position below is an existing interest in a Hustle Fund Angel Squad SPV. Open a position to see its details and place a bid.</p></header>
-<main class="wrap"><div class="ledger" role="table">
-<div class="row head" role="row"><span>Company</span><span>Date invested</span><span class="c-num">Amount invested</span><span class="c-num">Value today (est.)</span><span></span></div>
-<a class="row" href="all-blue-labs/">
-  <span class="c-name"><strong>All Blue Labs</strong><small>AL Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
-  <span class="c-date">Nov 4, 2021</span>
-  <span class="c-num">$20,000</span>
-  <span class="c-num">$2,238</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="badaboom/">
-  <span class="c-name"><strong>Badaboom</strong><small>BA Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
-  <span class="c-date">Jun 23, 2021</span>
-  <span class="c-num">$30,000</span>
-  <span class="c-num">$0</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="buffalo-market/">
-  <span class="c-name"><strong>Buffalo Market</strong><small>BU Fund II, a series of Hustle Fund Angel Squad, LP</small></span>
-  <span class="c-date">Mar 31, 2022</span>
-  <span class="c-num">$4,841</span>
-  <span class="c-num">$0</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="codecov/">
+<p class="lede">Each position below is an existing interest in a Hustle Fund Angel Squad SPV. Open a position to see its details and place a bid.</p>
+<p class="terms">Bids are binding. Bids are due by Wednesday, November 18, 2026. Wires are expected before Monday, November 30, 2026.</p></header>
+<main class="wrap">
+<section class="sec"><h2>Open for bids</h2><p>Open a position to see its details and place a bid.</p><div class="ledger" role="table"><div class="row head" role="row"><span>Company</span><span>Date invested</span><span class="c-num">Amount invested</span><span class="c-num">Value today (est.)</span><span></span></div><a class="row" href="codecov/">
   <span class="c-name"><strong>Codecov</strong><small>COD Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
   <span class="c-date">Mar 3, 2022</span>
   <span class="c-num">$5,000</span>
@@ -86,11 +78,11 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
   <span class="c-date">Jul 11, 2022</span>
   <span class="c-num">$8,000</span>
   <span class="c-num">$8,001</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="insurgrid/">
-  <span class="c-name"><strong>InsurGrid</strong><small>IN Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
-  <span class="c-date">Sep 21, 2021</span>
-  <span class="c-num">$10,000</span>
-  <span class="c-num">$2,857</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="jaan-health/">
+  <span class="c-name"><strong>Jaan Health</strong><small>JA Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">Oct 14, 2022</span>
+  <span class="c-num">$12,000</span>
+  <span class="c-num">$12,000</span>
   <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="kabo/">
   <span class="c-name"><strong>Kabo</strong><small>KA Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
   <span class="c-date">Aug 9, 2021</span>
@@ -101,11 +93,6 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
   <span class="c-date">Feb 24, 2022</span>
   <span class="c-num">$4,295</span>
   <span class="c-num">$4,295</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="lifepal/">
-  <span class="c-name"><strong>Lifepal</strong><small>LI Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
-  <span class="c-date">Aug 13, 2021</span>
-  <span class="c-num">$44,256</span>
-  <span class="c-num">$0</span>
   <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="medtruly/">
   <span class="c-name"><strong>MedTruly</strong><small>ME Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
   <span class="c-date">Nov 30, 2021</span>
@@ -116,16 +103,26 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
   <span class="c-date">Mar 7, 2022</span>
   <span class="c-num">$10,000</span>
   <span class="c-num">$2,461</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="nicklpass/">
+  <span class="c-name"><strong>Nicklpass</strong><small>NI Fund I, a series of Hustle Fund Angel Squad Verticals, LP</small></span>
+  <span class="c-date">Sep 2, 2022</span>
+  <span class="c-num">$10,000</span>
+  <span class="c-num">$11,162</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="pilotly/">
+  <span class="c-name"><strong>Pilotly</strong><small>PI Fund I, a series of Hustle Fund Angel Squad Verticals, LP</small></span>
+  <span class="c-date">Oct 25, 2022</span>
+  <span class="c-num">$10,000</span>
+  <span class="c-num">$10,000</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="po-fund-i/">
+  <span class="c-name"><strong>PO Fund I</strong><small>PO Fund I, a series of Hustle Fund Angel Squad Scale II, LP</small></span>
+  <span class="c-date"><span class="na">Not available</span></span>
+  <span class="c-num">$10,000</span>
+  <span class="c-num"><span class="na">Not available</span></span>
   <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="propseller/">
   <span class="c-name"><strong>Propseller</strong><small>SPV3, a series of Hustle Fund Angel Squad, LP</small></span>
   <span class="c-date">Jul 4, 2022</span>
   <span class="c-num">$30,000</span>
   <span class="c-num">$30,004</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="remotebase/">
-  <span class="c-name"><strong>Remotebase</strong><small>REM Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
-  <span class="c-date">May 18, 2022</span>
-  <span class="c-num">$13,000</span>
-  <span class="c-num">$6,500</span>
   <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="revive/">
   <span class="c-name"><strong>Revive</strong><small>HE Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
   <span class="c-date">Aug 3, 2021</span>
@@ -134,6 +131,11 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
   <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="solstar/">
   <span class="c-name"><strong>SolStar</strong><small>SO Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
   <span class="c-date">Feb 22, 2022</span>
+  <span class="c-num">$10,000</span>
+  <span class="c-num">$10,000</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="starry-night-labs/">
+  <span class="c-name"><strong>Starry Night Labs</strong><small>SU Fund I, a series of Hustle Fund Angel Squad Verticals, LP</small></span>
+  <span class="c-date">Apr 14, 2022</span>
   <span class="c-num">$10,000</span>
   <span class="c-num">$10,000</span>
   <span class="c-go" aria-hidden="true">&rarr;</span></a><a class="row" href="vendease/">
@@ -146,5 +148,37 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
   <span class="c-date">Nov 29, 2021</span>
   <span class="c-num">$5,000</span>
   <span class="c-num">$2,668</span>
-  <span class="c-go" aria-hidden="true">&rarr;</span></a>
-</div></main><footer class="wrap foot"><p>Positions are interests in AngelList-administered SPVs (series of Hustle Fund Angel Squad funds). Amount invested and investment date are from AngelList. Value today is an estimate: the amount invested times the SPV&rsquo;s current value multiple as reported on AngelList on Nov 4, 2026, before carry and fees.</p></footer></body></html>
+  <span class="c-go" aria-hidden="true">&rarr;</span></a></div></section>
+<section class="sec"><h2>Written off</h2><p>Not open for bids.</p><div class="ledger" role="table"><div class="row head" role="row"><span>Company</span><span>Date invested</span><span class="c-num">Amount invested</span><span class="c-num">Value today (est.)</span><span></span></div><div class="row">
+  <span class="c-name"><strong>Badaboom</strong><small>BA Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">Jun 23, 2021</span>
+  <span class="c-num">$30,000</span>
+  <span class="c-num">$0</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></div><div class="row">
+  <span class="c-name"><strong>Buffalo Market</strong><small>BU Fund II, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">Mar 31, 2022</span>
+  <span class="c-num">$4,841</span>
+  <span class="c-num">$0</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></div><div class="row">
+  <span class="c-name"><strong>Lifepal</strong><small>LI Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">Aug 13, 2021</span>
+  <span class="c-num">$44,256</span>
+  <span class="c-num">$0</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></div></div></section>
+<section class="sec"><h2>Wound down</h2><p>Not open for bids.</p><div class="ledger" role="table"><div class="row head" role="row"><span>Company</span><span>Date invested</span><span class="c-num">Amount invested</span><span class="c-num">Value today (est.)</span><span></span></div><div class="row">
+  <span class="c-name"><strong>All Blue Labs</strong><small>AL Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">Nov 4, 2021</span>
+  <span class="c-num">$20,000</span>
+  <span class="c-num">$2,238</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></div><div class="row">
+  <span class="c-name"><strong>InsurGrid</strong><small>IN Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">Sep 21, 2021</span>
+  <span class="c-num">$10,000</span>
+  <span class="c-num">$2,857</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></div><div class="row">
+  <span class="c-name"><strong>Remotebase</strong><small>REM Fund I, a series of Hustle Fund Angel Squad, LP</small></span>
+  <span class="c-date">May 18, 2022</span>
+  <span class="c-num">$13,000</span>
+  <span class="c-num">$6,500</span>
+  <span class="c-go" aria-hidden="true">&rarr;</span></div></div></section>
+</main><footer class="wrap foot"><p>Positions are interests in AngelList-administered SPVs (series of Hustle Fund Angel Squad funds). Amount invested and investment date are from AngelList. Value today is an estimate: the amount invested times the SPV&rsquo;s current value multiple as reported on AngelList on Nov 4, 2026, before carry and fees.</p></footer></body></html>
