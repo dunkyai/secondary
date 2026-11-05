@@ -20,13 +20,14 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
 .c-num,.num{text-align:right;font-variant-numeric:tabular-nums}
 .c-date{color:var(--mute)}.c-go{color:var(--mute);transition:transform .15s}
 .na{color:var(--mute);font-style:italic;font-size:14px}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:48px;align-items:start;padding-bottom:64px}
-.facts dl{margin:0;border-top:1px solid var(--ink)}
-.facts div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.facts dt{color:var(--mute);font-size:14px}.facts dd{margin:0;font-weight:500;text-align:right}
+.stack{padding-bottom:64px}.stack>section+section{margin-top:40px}
+.facts dl{margin:0;border-top:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts dt{color:var(--mute);font-size:13px;margin-bottom:4px}.facts dd{margin:0;font-weight:500;font-size:17px}
+.facts .wide{grid-column:span 2}
 .bid{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px}
 .bid h2{font:400 32px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 8px}.bid>p{margin:0 0 16px;color:var(--mute)}
-.bid iframe{width:100%;height:880px;border:0;display:block}
+.bid iframe{width:100%;height:1000px;border:0;display:block}
 .bid .alt{font-size:13px;margin:12px 0 0}.bid a{color:var(--acc)}
 .foot{border-top:1px solid var(--line);padding-top:24px;padding-bottom:48px;color:var(--mute);font-size:13px}
 @media (max-width:760px){h1{font-size:40px}.top{padding-top:48px}
@@ -34,20 +35,24 @@ a.row:hover{background:#efede6}a.row:hover .c-go{color:var(--acc);transform:tran
 .c-name{grid-column:1/-1}.c-date{grid-column:1/-1;font-size:14px}
 .row .c-num{text-align:left}.row .c-num::before{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
 .row .c-num:nth-of-type(3)::before{content:"Invested"}.row .c-num:nth-of-type(4)::before{content:"Value today"}
-.c-go{display:none}.grid{grid-template-columns:1fr;gap:32px}.bid{padding:16px}}
+.c-go{display:none}.facts dl{grid-template-columns:1fr}.facts .wide{grid-column:auto}.bid{padding:16px 8px}.bid h2,.bid>p{padding:0 8px}.sec h2{font-size:28px}}
+
+.terms{margin:24px 0 0;max-width:720px;padding:14px 18px;border-left:3px solid var(--acc);background:#eef2ee;font-size:15px;font-weight:500}
+.sec{margin-bottom:56px}.sec h2{font:400 34px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 6px}.sec>p{margin:0 0 16px;color:var(--mute);font-size:15px}
+.sec .ledger{margin-bottom:0}
+div.row .c-go{visibility:hidden}
+.closed{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;color:var(--mute)}
 </style></head><body>
 <header class="wrap top"><a class="back" href="../">&larr; All positions</a>
 <p class="eyebrow">Secondary sale</p><h1>Karat Financial</h1>
-<p class="lede">KAR Fund I, a series of Hustle Fund Angel Squad, LP</p></header>
-<main class="wrap grid">
-<section class="facts" aria-label="Position details"><dl>
+<p class="lede">KAR Fund I, a series of Hustle Fund Angel Squad, LP</p><p class="terms">Bids are binding. Bids are due by Wednesday, November 18, 2026. Wires are expected before Monday, November 30, 2026.</p></header>
+<main class="wrap stack"><section class="facts" aria-label="Position details"><dl>
 <div><dt>Company</dt><dd>Karat Financial</dd></div>
-<div><dt>Official legal name</dt><dd>KAR Fund I, a series of Hustle Fund Angel Squad, LP</dd></div>
+<div class="wide"><dt>Official legal name</dt><dd>KAR Fund I, a series of Hustle Fund Angel Squad, LP</dd></div>
 <div><dt>Investment date</dt><dd>Feb 24, 2022</dd></div>
-<div><dt>Amount invested</dt><dd class="num">$4,295</dd></div>
-<div><dt>Value today (est.)</dt><dd class="num">$4,295</dd></div>
-</dl></section>
-<section class="bid" aria-label="Place a bid"><h2>Place a bid</h2>
+<div><dt>Amount invested</dt><dd class="num-l">$4,295</dd></div>
+<div><dt>Value today (est.)</dt><dd class="num-l">$4,295</dd></div>
+</dl></section><section class="bid" aria-label="Place a bid"><h2>Place a bid</h2>
 <p>Enter your name, email and the total you would pay for this whole position.</p>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0ggWHnlJUBkwyCxuPJi43BDB6isLm9J6kaarj-OTSNPOTZg/viewform?embedded=true" title="Bid form for Karat Financial" loading="lazy">Loading…</iframe>
 <p class="alt">Form not loading? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0ggWHnlJUBkwyCxuPJi43BDB6isLm9J6kaarj-OTSNPOTZg/viewform" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
