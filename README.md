@@ -1,2 +1,3 @@
-# secondary
-Secondary-sale pages for Hustle Fund Angel Squad SPV positions
+# Secondary positions
+
+Static pages listing SPV positions open for bids, one page per position with an embedded bid form.
